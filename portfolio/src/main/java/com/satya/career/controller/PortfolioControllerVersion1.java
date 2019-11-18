@@ -77,7 +77,7 @@ public class PortfolioControllerVersion1 {
 		return "home";
 		}
 	
-	@RequestMapping(value = "/test/")
+	@RequestMapping(value="/test/")
 	public String testweb() {
 		System.out.println("Website test method in controller executed");
 		return "index";		

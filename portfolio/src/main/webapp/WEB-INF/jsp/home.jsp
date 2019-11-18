@@ -125,22 +125,22 @@
 		</div>
 
 
-		<div id="Skills">
-			<div class="container bg-3">
-				<h3>Skills</h3>
-				<br>
-			</div>
-			<div class="container-fluid bg-3 text-center">
-				<div class="row">
-					<c:forEach var="skill" items="${SkillsList}">
-						<div class="col-sm-1">
-							<a href="#" class="btn btn-primary">${skill.skill}</a>
-							<p>${skill.skillExperience}Years</p>
-						</div>
-					</c:forEach>
-				</div>
-			</div>
-		</div>
+<!-- 		<div id="Skills"> -->
+<!-- 			<div class="container bg-3"> -->
+<!-- 				<h3>Skills</h3> -->
+<!-- 				<br> -->
+<!-- 			</div> -->
+<!-- 			<div class="container-fluid bg-3 text-center"> -->
+<!-- 				<div class="row"> -->
+<%-- 					<c:forEach var="skill" items="${SkillsList}"> --%>
+<!-- 						<div class="col-sm-1"> -->
+<%-- 							<a href="#" class="btn btn-primary">${skill.skill}</a> --%>
+<%-- 							<p>${skill.skillExperience}Years</p> --%>
+<!-- 						</div> -->
+<%-- 					</c:forEach> --%>
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
 
 		<div id="Experience" class="card">
 			<div class="card-body">
