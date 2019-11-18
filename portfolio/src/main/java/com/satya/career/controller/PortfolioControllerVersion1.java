@@ -24,7 +24,7 @@ import com.satya.career.service.SkillService;
 import com.satya.career.service.WorkExpService;
 
 @Controller
-@RequestMapping("/profile/")
+@RequestMapping("/")
 public class PortfolioControllerVersion1 {
 
 	@Autowired

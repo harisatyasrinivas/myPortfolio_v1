@@ -18,6 +18,8 @@
 		<maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
 		<java.version>1.8</java.version>
 		<google-api-client.version>1.30.2</google-api-client.version>
+		<failOnMissingWebXml>false</failOnMissingWebXml>
+		<jetty.maven.plugin>9.4.3.v20170317</jetty.maven.plugin>
 	</properties>
 
 	<parent>
@@ -26,20 +28,28 @@
 		<version>2.2.1.RELEASE</version>
 	</parent>
 
-	<!-- <dependencyManagement> -->
-	<!-- <dependencies> -->
-	<!-- <dependency> -->
-	<!-- <groupId>com.google.cloud</groupId> -->
-	<!-- <artifactId>google-cloud-bom</artifactId> -->
-	<!-- <version>0.119.0-alpha</version> -->
-	<!-- <type>pom</type> -->
-	<!-- <scope>import</scope> -->
-	<!-- </dependency> -->
-	<!-- </dependencies> -->
-	<!-- </dependencyManagement> -->
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.google.cloud</groupId>
+				<artifactId>google-cloud-bom</artifactId>
+				<version>0.119.0-alpha</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 
 	<dependencies>
+		<dependency>                        <!-- REQUIRED -->
+			<groupId>javax.servlet</groupId>  <!-- Java Servlet API -->
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>           <!-- Provided by the Jetty Servlet Container -->
+		</dependency>
+
 		<!-- Compile/runtime dependencies -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -171,6 +181,7 @@
 		<!-- for hot reload of the web application -->
 		<outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
 		<plugins>
+
 			<plugin>
 				<groupId>com.google.cloud.tools</groupId>
 				<artifactId>appengine-maven-plugin</artifactId>
@@ -180,6 +191,15 @@
 					<deploy.version>version1</deploy.version>
 				</configuration>
 			</plugin>
+			
+			  <!-- Used for local debugging -->
+
+			<plugin>                        
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>${jetty.maven.plugin}</version>
+			</plugin>
+
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
