@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.satya.career.entity.Address;
@@ -80,7 +79,7 @@ public class PortfolioControllerVersion1 {
 		return "home";
 		}
 	
-	@RequestMapping(value="/test/")
+	@GetMapping(value="/test/")
 	public String testweb() {
 		System.out.println("Website test method in controller executed");
 		return "index";		
