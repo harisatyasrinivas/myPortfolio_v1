@@ -2,6 +2,7 @@ package com.satya.career.controller;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,8 +25,9 @@ import com.satya.career.service.SkillService;
 import com.satya.career.service.WorkExpService;
 
 @Controller
-@RequestMapping("/")
 public class PortfolioControllerVersion1 {
+	
+	//@RequestMapping("/")
 
 	@Autowired
 	private ProfileService profileService;
@@ -59,7 +61,7 @@ public class PortfolioControllerVersion1 {
 	@RequestMapping(value = "/")
 	public String getMyProfile(Model model) {		
 		long profileId =3; 
-		System.out.println(profileId);
+		System.out.println("Mapping done for profile id"+profileId);
 		Profile profile = profileService.getProfile(profileId);
 		List<Education> edu = educationService.getEducationList();
         Address address = addressService.getAddress(profileId);
